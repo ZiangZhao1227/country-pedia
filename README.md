@@ -8,7 +8,7 @@ This is your final project for the frontend module
 
 Fork this repo, then clone the **fork** to your machine and start working on it. You can open a pull request as soon as possible (no need to wait until finished)
 For styling, you can use whatever css solution you want: css, scss, Material UI, etc.
-You need to install the css library yourself. Make sure to use node-sass version 4.14.1 if you want to use scss
+You need to install the css library yourself. Make sure to use node-sass version 4.14.1 if you want to use scss (using other version may break the app, so switch to the above version in that case)
 
 ### Step 1
 
@@ -24,7 +24,7 @@ const [error, countries] = useCountries()
 
 Write the second custom hook, that:
 
-- Given a country name as argument (international or native), returns the data about that country from [countries APIs](https://restcountries.eu/).
+- Given a country name as argument (international or native), returns the data about that country from [countries APIs](https://restcountries.com/).
 - Example usage of the hook is like this:
 
 ```
@@ -59,6 +59,10 @@ const [error, country] = useCountry('Suomi')
 
 ### Step 6
 
+Convert the app to typescript
+
+### Step 7
+
 Take your time to implement the following features:
 
 - Implement a search bar to search for a country
@@ -70,7 +74,7 @@ Take your time to implement the following features:
 
 ## References
 
-[Link](https://countrytable.netlify.app/)
+[Demo](https://flagify.netlify.app/)
 
 Homepage:
 ![homepage](media/home.png)
