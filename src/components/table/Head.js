@@ -3,9 +3,11 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 
+import "./Table.css"
+
 const Head = () => {
   return (
-    <TableHead>
+    <TableHead className="table-head-container">
       <TableRow>
         <TableCell>FLAG</TableCell>
         <TableCell align="right">NAME</TableCell>

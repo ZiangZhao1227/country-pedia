@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+/*add some styles*/
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countries-info-container {
+  margin: 35px 70px;
+}
