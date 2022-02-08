@@ -1,14 +1,16 @@
-import './App.css'
-import useCountries from './custom-hooks/useCountries';
-import useCountry from './custom-hooks/useCountry';
+import "./App.css";
+import CountreisTable from "./components/table/CountriesTable";
+import useCountries from "./custom-hooks/useCountries";
+
 
 function App() {
   const [countries, countriesError] = useCountries();
-  const [country, countryError] = useCountry('Suomi');
-  console.log(country)
-  console.log(countries)
-  return <div className='App'>
-  </div>
+ 
+  return (
+    <div>
+      {countries && <CountreisTable countries={countries}/>}
+    </div>
+  );
 }
 
-export default App
+export default App;

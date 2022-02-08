@@ -16,10 +16,7 @@ const useCountries = () => {
           throw new Error("cannot fetch the data");
         }
         const data = await response.json();
-        const countryListName = data.map(
-            (country) => country.name.common
-        );
-        setCountries(countryListName);
+        setCountries(data);
       } catch (error) {
         setError(error);
         console.log(error.message);

@@ -6,7 +6,7 @@ const useCountry = (name) => {
 
   useEffect(() => {
     const controller = new AbortController();
-    const fetchCountryByName = async (name) => {
+    const fetchData = async (name) => {
       try {
         const response = await fetch(
           `https://restcountries.com/v3.1/name/${name}`,
@@ -25,7 +25,7 @@ const useCountry = (name) => {
         console.log(error.message);
       }
     };
-    fetchCountryByName(name)
+    fetchData(name);
 
     return () => {
       controller.abort();
