@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 
 const useCountries = () => {
   const [countries, setCountries] = useState(null);
-  const [error, setError] = useState(null);
+  const [countriesError, setError] = useState(null);
 
   useEffect(() => {
     const controller = new AbortController();
-    const fetchData = async (controller) => {
+    const fetchData = async () => {
       try {
         const response = await fetch("https://restcountries.com/v3.1/all", {
           method: "get",
@@ -25,14 +25,14 @@ const useCountries = () => {
         console.log(error.message);
       }
     };
-    fetchData(controller);
+    fetchData();
 
     return () => {
       controller.abort();
     };
   }, []);
 
-  return [countries, error];
+  return [countries, countriesError];
 };
 
 export default useCountries;

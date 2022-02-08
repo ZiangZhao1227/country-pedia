@@ -1,11 +1,13 @@
 import './App.css'
 import useCountries from './custom-hooks/useCountries';
+import useCountry from './custom-hooks/useCountry';
 
 function App() {
-  const [data, error] = useCountries();
-  console.log(error)
+  const [countries, countriesError] = useCountries();
+  const [country, countryError] = useCountry('Finland');
+  console.log(country)
+  console.log(countries)
   return <div className='App'>
-    {data && <div>{data}</div>}
   </div>
 }
 
