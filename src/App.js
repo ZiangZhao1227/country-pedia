@@ -1,28 +1,16 @@
+import { Routes, Route } from "react-router-dom";
+
 import "./App.css";
-import SearchBar from "./components/search/SearchBar";
-import CountreisTable from "./components/table/CountriesTable";
-import useCountries from "./custom-hooks/useCountries";
+import Home from "./pages/Home";
+import Country from "./pages/Country";
 
 function App() {
-  const [countries, countriesError] = useCountries();
-
-  return (
-    <div>
-      <header className="title-container">
-        <h1>Frontend Project</h1>
-      </header>
-      <section className="search-container">
-        <SearchBar />
-      </section>
-      <section className="countries-info-container">
-        {countries ? (
-          <CountreisTable countries={countries} />
-        ) : (
-          <p>Loading...</p>
-        )}
-      </section>
-    </div>
-  );
+  return <div className="App">
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/country/:name" element={<Country/>}/>
+    </Routes>
+  </div>;
 }
 
 export default App;

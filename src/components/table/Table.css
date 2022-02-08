@@ -1,5 +1,8 @@
 .table-head-container {
   background-color: #2196f3 !important;
-  height: 100px!important;
+  height: 100px !important;
 }
 
+.country-name-link {
+  color: #2196f3;
+}

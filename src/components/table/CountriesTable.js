@@ -5,7 +5,7 @@ import Paper from "@material-ui/core/Paper";
 
 import Head from "./Head";
 import Body from "./Body";
-import "./Table.css"
+import "./Table.css";
 
 const CountriesTable = ({ countries }) => {
   const getCountryLanguages = (country) => {
