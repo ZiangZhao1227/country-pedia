@@ -6,3 +6,7 @@
 .country-name-link {
   color: #2196f3;
 }
+
+.country-name-link:hover {
+  color: #013968;
+}
