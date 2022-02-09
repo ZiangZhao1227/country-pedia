@@ -9,7 +9,7 @@ import Box from "@material-ui/core/Box";
 import "./Card.css";
 import List from "./List";
 
-const CardBody = ({ country, navigate }) => {
+const CardBody = ({ country, navigate, getfirstInput }) => {
   return (
     <div className="card-container">
       <Card className="card-container__body">
@@ -19,10 +19,10 @@ const CardBody = ({ country, navigate }) => {
           alt="country flag"
         />
         <CardContent>
-          <Typography gutterBottom variant="h4" component={"span"}>
+          <Typography gutterBottom variant="h4" component={"span"} className="card-container__name">
             {country.name.official}
           </Typography>
-          <List country={country} />
+          <List country={country} getfirstInput={getfirstInput} />
         </CardContent>
         <Box textAlign="center">
           <Button

@@ -17,7 +17,7 @@ const Row = ({ getCountryLanguages }) => {
       ) : data ? (
         <>
           {data.map((country) => (
-            <TableRow key={country.name.official}>
+            <TableRow key={country.name.official} className="row-container">
               <TableCell align="center" component="th" scope="row">
                 <img src={country.flags.png} alt="country flags"></img>
               </TableCell>

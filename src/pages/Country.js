@@ -3,21 +3,32 @@ import { useParams, useNavigate } from "react-router-dom";
 import CardBody from "../components/card/CardBody";
 
 import Header from "../components/Header";
-import useCountry from "../custom-hooks/useCountry";
+import { useGetCountryByNameQuery } from "../service/countries";
 
 const Country = () => {
   const navigate = useNavigate();
   const { name } = useParams();
-  const [country, countryError] = useCountry(name);
-
+  const { data, error, isLoading } = useGetCountryByNameQuery(name);
+  const getfirstInput = (obj) => {
+    const firstInput = Object.keys(obj)[0];
+    return firstInput;
+  };
   return (
     <div>
-      <Header title="Country List" />
-      {country ? (
-        <CardBody country={country} navigate={navigate} />
-      ) : (
-        <p>Loading...</p>
-      )}
+      {error ? (
+        <>Oh no, there was an error</>
+      ) : isLoading ? (
+        <>Loading...</>
+      ) : data ? (
+        <>
+          <Header title="Country Detail" />
+          <CardBody
+            country={data[0]}
+            navigate={navigate}
+            getfirstInput={getfirstInput}
+          />
+        </>
+      ) : null}
     </div>
   );
 };

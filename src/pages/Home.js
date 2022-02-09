@@ -6,7 +6,7 @@ import Header from "../components/Header";
 const Home = () => {
   return (
     <div>
-      <Header title="Cuntry List" />
+      <Header title="Country List" />
       <section className="search-container">
         <SearchBar />
       </section>

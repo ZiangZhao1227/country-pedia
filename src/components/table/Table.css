@@ -3,10 +3,20 @@
   height: 100px !important;
 }
 
+.table-head-container th {
+  font-size: 25px !important;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
 .country-name-link {
   color: #2196f3;
 }
 
 .country-name-link:hover {
   color: #013968;
+}
+
+.row-container {
+  background-color: whitesmoke;
 }
