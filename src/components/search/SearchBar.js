@@ -3,8 +3,12 @@ import Box from "@material-ui/core/Box";
 import TextField from "@material-ui/core/TextField";
 import Search from "@material-ui/icons/Search";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import { useDispatch } from "react-redux";
 
-const SearchBar = ({ handleChange }) => {
+import { handleSearch } from "../../features/searchSlice";
+
+const SearchBar = () => {
+  const dispatch = useDispatch();
   return (
     <Box
       component="form"
@@ -18,7 +22,9 @@ const SearchBar = ({ handleChange }) => {
         id="outlined-basic"
         label="search by country"
         variant="outlined"
-        onChange={handleChange}
+        onChange={(e) => {
+          dispatch(handleSearch(e.target.value));
+        }}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">

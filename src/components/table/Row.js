@@ -2,12 +2,14 @@ import React from "react";
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import "./Table.css";
 import { useGetCountriesQuery } from "../../service/countries";
 
-const Row = ({ getCountryLanguages, searchTerm }) => {
+const Row = ({ getCountryLanguages }) => {
   const { data, error, isLoading } = useGetCountriesQuery();
+  const searchTerm = useSelector((state) => state.search.value);
   const filteredCountries = (array) => {
     if (!searchTerm) {
       return array;
@@ -35,7 +37,7 @@ const Row = ({ getCountryLanguages, searchTerm }) => {
               </TableCell>
               <TableCell align="center">
                 <Link
-                  to={`/country/${country.name.common}`}
+                  to={`/country/${country.name.official}`}
                   className="country-name-link"
                 >
                   {country.name.common}

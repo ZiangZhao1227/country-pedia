@@ -5,7 +5,11 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-const List = ({ country, getfirstInput }) => {
+const List = ({ countryDetail }) => {
+  const getfirstInput = (obj) => {
+    const firstInput = Object.keys(obj)[0];
+    return firstInput;
+  };
   return (
     <div>
       <Accordion>
@@ -17,7 +21,7 @@ const List = ({ country, getfirstInput }) => {
           <Typography>Other Names</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>{country.altSpellings.join("\r\n")}</Typography>
+          <Typography>{countryDetail.altSpellings.join("\r\n")}</Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -29,7 +33,7 @@ const List = ({ country, getfirstInput }) => {
           <Typography>Region</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>{country.region}</Typography>
+          <Typography>{countryDetail.region}</Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -41,7 +45,7 @@ const List = ({ country, getfirstInput }) => {
           <Typography>Borders</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          {country.borders ? country.borders.join("\r\n") : <p>None borders</p>}
+          {countryDetail.borders ? countryDetail.borders.join("\r\n") : <p>None borders</p>}
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -53,8 +57,8 @@ const List = ({ country, getfirstInput }) => {
           <Typography>Currencies</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          {country.currencies ? (
-            country.currencies[getfirstInput(country.currencies)].name
+          {countryDetail.currencies ? (
+            countryDetail.currencies[getfirstInput(countryDetail.currencies)].name
           ) : (
             <p>None currencies</p>
           )}

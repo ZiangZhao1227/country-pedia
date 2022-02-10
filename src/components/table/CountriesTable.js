@@ -7,7 +7,7 @@ import Head from "./Head";
 import Body from "./Body";
 import "./Table.css";
 
-const CountriesTable = ({ searchTerm }) => {
+const CountriesTable = () => {
   const getCountryLanguages = (country) => {
     let languages = [];
     for (let item in country) {
@@ -22,7 +22,6 @@ const CountriesTable = ({ searchTerm }) => {
         <Head />
         <Body
           getCountryLanguages={getCountryLanguages}
-          searchTerm={searchTerm}
         />
       </Table>
     </TableContainer>

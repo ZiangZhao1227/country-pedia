@@ -5,17 +5,19 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import { useNavigate } from "react-router-dom";
 
 import "./Card.css";
 import List from "./List";
 
-const CardBody = ({ country, navigate, getfirstInput }) => {
+const CardBody = ({ countryDetail }) => {
+  const navigate = useNavigate();
   return (
     <div className="card-container">
       <Card className="card-container__body">
         <CardMedia
           component="img"
-          image={country.flags.png}
+          image={countryDetail.flags.png}
           alt="country flag"
         />
         <CardContent>
@@ -25,9 +27,9 @@ const CardBody = ({ country, navigate, getfirstInput }) => {
             component={"span"}
             className="card-container__name"
           >
-            {country.name.official}
+            {countryDetail.name.official}
           </Typography>
-          <List country={country} getfirstInput={getfirstInput} />
+          <List countryDetail={countryDetail} />
         </CardContent>
         <Box textAlign="center">
           <Button
