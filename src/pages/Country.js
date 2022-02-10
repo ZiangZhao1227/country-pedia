@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { useParams } from "react-router-dom";
 import CardBody from "../components/card/CardBody";
 
@@ -8,19 +9,16 @@ const Country = () => {
   const { name } = useParams();
   const { data, error, isLoading } = useGetCountryByNameQuery(name);
 
+  if (isLoading) {
+    return <p>Loading...</p>;
+  } else if (error) {
+    return <p>Oh no, there was an error</p>;
+  }
   return (
-    <div>
-      {error ? (
-        <>Oh no, there was an error</>
-      ) : isLoading ? (
-        <>Loading...</>
-      ) : data ? (
-        <>
-          <Header title="Country Detail" />
-          <CardBody countryDetail={data[0]} />
-        </>
-      ) : null}
-    </div>
+    <Fragment>
+      <Header title="Country Detail" />
+      <CardBody countryDetail={data[0]} />
+    </Fragment>
   );
 };
 
