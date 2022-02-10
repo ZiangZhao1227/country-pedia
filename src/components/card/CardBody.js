@@ -19,7 +19,12 @@ const CardBody = ({ country, navigate, getfirstInput }) => {
           alt="country flag"
         />
         <CardContent>
-          <Typography gutterBottom variant="h4" component={"span"} className="card-container__name">
+          <Typography
+            gutterBottom
+            variant="overline"
+            component={"span"}
+            className="card-container__name"
+          >
             {country.name.official}
           </Typography>
           <List country={country} getfirstInput={getfirstInput} />

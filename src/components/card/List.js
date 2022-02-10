@@ -41,13 +41,7 @@ const List = ({ country, getfirstInput }) => {
           <Typography>Borders</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            {country.borders ? (
-              country.borders.join("\r\n")
-            ) : (
-              <p>None borders</p>
-            )}
-          </Typography>
+          {country.borders ? country.borders.join("\r\n") : <p>None borders</p>}
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -59,13 +53,11 @@ const List = ({ country, getfirstInput }) => {
           <Typography>Currencies</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            {country.currencies ? (
-              country.currencies[getfirstInput(country.currencies)].name
-            ) : (
-              <p>None currencies</p>
-            )}
-          </Typography>
+          {country.currencies ? (
+            country.currencies[getfirstInput(country.currencies)].name
+          ) : (
+            <p>None currencies</p>
+          )}
         </AccordionDetails>
       </Accordion>
     </div>

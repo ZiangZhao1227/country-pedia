@@ -27,7 +27,11 @@ const Row = ({ getCountryLanguages, searchTerm }) => {
           {filteredCountries(data).map((country) => (
             <TableRow key={country.name.official} className="row-container">
               <TableCell align="center" component="th" scope="row">
-                <img src={country.flags.png} alt="country flags"></img>
+                <img
+                  src={country.flags.png}
+                  alt="country flags"
+                  className="row-container__img"
+                ></img>
               </TableCell>
               <TableCell align="center">
                 <Link
