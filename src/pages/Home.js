@@ -1,5 +1,3 @@
-import React from "react";
-
 import SearchBar from "../components/search/SearchBar";
 import CountreisTable from "../components/table/CountriesTable";
 import Header from "../components/Header";
