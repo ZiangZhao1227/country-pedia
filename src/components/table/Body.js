@@ -3,10 +3,10 @@ import TableBody from "@material-ui/core/TableBody";
 
 import Row from "./Row";
 
-const Body = ({ getCountryLanguages }) => {
+const Body = ({ getCountryLanguages, searchTerm }) => {
   return (
     <TableBody>
-      <Row getCountryLanguages={getCountryLanguages} />
+      <Row getCountryLanguages={getCountryLanguages} searchTerm={searchTerm} />
     </TableBody>
   );
 };

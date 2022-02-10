@@ -2,7 +2,7 @@ import React from "react";
 import Box from "@material-ui/core/Box";
 import TextField from "@material-ui/core/TextField";
 
-const SearchBar = () => {
+const SearchBar = ({ handleChange }) => {
   return (
     <Box
       component="form"
@@ -16,6 +16,7 @@ const SearchBar = () => {
         id="outlined-basic"
         label="search by country"
         variant="outlined"
+        onChange={handleChange}
       />
     </Box>
   );

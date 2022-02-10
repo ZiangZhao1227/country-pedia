@@ -6,8 +6,16 @@ import { Link } from "react-router-dom";
 import "./Table.css";
 import { useGetCountriesQuery } from "../../service/countries";
 
-const Row = ({ getCountryLanguages }) => {
+const Row = ({ getCountryLanguages, searchTerm }) => {
   const { data, error, isLoading } = useGetCountriesQuery();
+  const filteredCountries = (array) => {
+    if (!searchTerm) {
+      return array;
+    }
+    return array.filter((country) =>
+      country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  };
   return (
     <>
       {error ? (
@@ -16,7 +24,7 @@ const Row = ({ getCountryLanguages }) => {
         <>Loading...</>
       ) : data ? (
         <>
-          {data.map((country) => (
+          {filteredCountries(data).map((country) => (
             <TableRow key={country.name.official} className="row-container">
               <TableCell align="center" component="th" scope="row">
                 <img src={country.flags.png} alt="country flags"></img>

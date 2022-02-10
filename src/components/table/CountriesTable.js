@@ -7,7 +7,7 @@ import Head from "./Head";
 import Body from "./Body";
 import "./Table.css";
 
-const CountriesTable = () => {
+const CountriesTable = ({ searchTerm }) => {
   const getCountryLanguages = (country) => {
     let languages = [];
     for (let item in country) {
@@ -20,7 +20,10 @@ const CountriesTable = () => {
     <TableContainer component={Paper}>
       <Table aria-label="simple table" className="table-container">
         <Head />
-        <Body getCountryLanguages={getCountryLanguages} />
+        <Body
+          getCountryLanguages={getCountryLanguages}
+          searchTerm={searchTerm}
+        />
       </Table>
     </TableContainer>
   );
