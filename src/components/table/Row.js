@@ -2,13 +2,19 @@ import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-
-import "./Table.css";
-import { useGetCountriesQuery } from "../../redux/service/countries";
 import { Fragment } from "react";
 
-const Row = ({ getCountryLanguages }) => {
-  const { data, error, isLoading } = useGetCountriesQuery();
+import "./Table.css";
+
+const Row = ({ data }) => {
+  const getCountryLanguages = (country) => {
+    let languages = [];
+    for (let item in country) {
+      languages.push(country[item]);
+    }
+    return languages;
+  };
+
   const searchTerm = useSelector((state) => state.search.value);
   const filteredCountries = (array) => {
     if (!searchTerm) {
@@ -19,11 +25,6 @@ const Row = ({ getCountryLanguages }) => {
     );
   };
 
-  if (isLoading) {
-    return <p>Loading...</p>;
-  } else if (error) {
-    return <p>Oh no, there was an error</p>;
-  }
   return (
     <Fragment>
       {filteredCountries(data).map((country) => (
