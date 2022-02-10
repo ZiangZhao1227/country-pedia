@@ -7,7 +7,7 @@ import Box from "@material-ui/core/Box";
 import { useNavigate } from "react-router-dom";
 
 import "./Card.css";
-import List from "../List";
+import List from "../list/List";
 
 const CardBody = ({ countryDetail }) => {
   const navigate = useNavigate();

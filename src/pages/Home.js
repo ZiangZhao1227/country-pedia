@@ -1,6 +1,6 @@
 import SearchBar from "../components/search/SearchBar";
 import CountreisTable from "../components/table/CountriesTable";
-import Header from "../components/Header";
+import Header from "../components/head/Header";
 
 const Home = () => {
   return (

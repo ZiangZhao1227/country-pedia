@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import CardBody from "../components/card/CardBody";
 
-import Header from "../components/Header";
+import Header from "../components/head/Header";
 import { useGetCountryByNameQuery } from "../redux/service/countries";
 
 const Country = () => {
