@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import "./Table.css";
-import { useGetCountriesQuery } from "../../service/countries";
+import { useGetCountriesQuery } from "../../redux/service/countries";
 
 const Row = ({ getCountryLanguages }) => {
   const { data, error, isLoading } = useGetCountriesQuery();

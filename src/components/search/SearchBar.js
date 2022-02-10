@@ -5,7 +5,7 @@ import Search from "@material-ui/icons/Search";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import { useDispatch } from "react-redux";
 
-import { handleSearch } from "../../features/searchSlice";
+import { handleSearch } from "../../redux/features/searchSlice";
 
 const SearchBar = () => {
   const dispatch = useDispatch();
