@@ -1,6 +1,8 @@
 import React from "react";
 import Box from "@material-ui/core/Box";
 import TextField from "@material-ui/core/TextField";
+import Search from "@material-ui/icons/Search";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 const SearchBar = ({ handleChange }) => {
   return (
@@ -17,6 +19,13 @@ const SearchBar = ({ handleChange }) => {
         label="search by country"
         variant="outlined"
         onChange={handleChange}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <Search />
+            </InputAdornment>
+          ),
+        }}
       />
     </Box>
   );

@@ -11,10 +11,12 @@
 
 .country-name-link {
   color: #2196f3;
+  text-decoration: none;
 }
 
 .country-name-link:hover {
-  color: #013968;
+  color: rgb(228, 59, 8);
+  font-size: 20px !important;
 }
 
 .row-container {
