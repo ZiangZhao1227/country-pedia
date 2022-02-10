@@ -1,10 +1,9 @@
 .table-head-container {
   background-color: #2196f3 !important;
-  height: 100px !important;
 }
 
 .table-head-container th {
-  font-size: 25px !important;
+  font-size: 1.2rem !important;
   font-weight: bold;
   color: whitesmoke;
 }
@@ -16,7 +15,7 @@
 
 .country-name-link:hover {
   color: rgb(228, 59, 8);
-  font-size: 20px !important;
+  font-size: 1rem !important;
 }
 
 .row-container {
@@ -24,6 +23,6 @@
 }
 
 .row-container__img {
-  width: 125px;
-  height: 85px;
+  width: 8rem;
+  height: 5rem;
 }
