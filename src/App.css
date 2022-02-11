@@ -38,18 +38,11 @@
 }
 
 /*add some styles*/
-.title-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .search-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 85px;
 }
 
 .countries-info-container {
   margin: 35px 70px;
 }
+
