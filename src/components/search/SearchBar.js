@@ -3,6 +3,7 @@ import TextField from "@material-ui/core/TextField";
 import Search from "@material-ui/icons/Search";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import { useDispatch } from "react-redux";
+import debounce from "lodash.debounce";
 
 import { handleSearch } from "../../redux/features/searchSlice";
 
@@ -21,9 +22,9 @@ const SearchBar = () => {
         id="outlined-basic"
         label="search by country"
         variant="outlined"
-        onChange={(e) => {
+        onChange={debounce((e) => {
           dispatch(handleSearch(e.target.value));
-        }}
+        }, 500)}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
