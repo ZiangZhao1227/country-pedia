@@ -1,9 +1,10 @@
 .card-container__body {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0;
   transition: 0.3s;
-  width: 20%;
-  background-color: whitesmoke !important;
+  width: 32%;
   padding: 30px;
+  margin-top: 100px;
+  margin-bottom: 200px;
 }
 
 .card-container__name {
@@ -11,12 +12,11 @@
 }
 
 .card-container__body:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0;
 }
 
 .card-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
 }

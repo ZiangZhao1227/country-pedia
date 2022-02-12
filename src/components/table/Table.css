@@ -1,27 +1,21 @@
-.table-head-container {
-  background-color: #2196f3 !important;
-}
-
 .table-head-container th {
   font-size: 1.2rem !important;
   font-weight: bold;
-  color: whitesmoke;
 }
 
 .country-name-link {
-  color: #2196f3;
   text-decoration: none;
 }
 
 .country-name-link:hover {
-  color: rgb(228, 59, 8);
-}
-
-.row-container {
-  background-color: whitesmoke;
+  color: rgb(5, 156, 144);
 }
 
 .row-container__img {
   width: 8rem;
   height: 5rem;
+}
+
+.table-container {
+  margin-bottom: 850px;
 }
