@@ -9,7 +9,7 @@ const Favorite = () => {
   return (
     <Fragment>
       <IconButton onClick={() => setClicked(!clicked)}>
-        {clicked ? <FavoriteIcon color="error" /> : <FavoriteBorderIcon color="error"/>}
+        {clicked ? <FavoriteIcon color="error"/> : <FavoriteBorderIcon color="error"/>}
       </IconButton>
     </Fragment>
   );
