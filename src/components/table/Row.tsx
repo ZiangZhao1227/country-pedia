@@ -6,6 +6,7 @@ import { Fragment } from "react";
 import CircleIcon from "@mui/icons-material/Circle";
 
 import "./Table.css";
+import Favorite from "./Favorite";
 
 interface dataProps {
   data: [];
@@ -92,7 +93,7 @@ const Row = ({ data }: dataProps) => {
             ))}
           </TableCell>
           <TableCell align="center">
-            favorite
+            <Favorite />
           </TableCell>
         </TableRow>
       ))}
