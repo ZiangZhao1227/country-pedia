@@ -1,4 +1,3 @@
-import * as React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -6,7 +5,6 @@ import IconButton from "@material-ui/core/IconButton";
 import Home from "@material-ui/icons/Home";
 import Avatar from "@material-ui/core/Avatar";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import Grid from "@material-ui/core/Grid";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { Switch } from "@material-ui/core";
@@ -15,8 +13,17 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 
 import { handleSearch } from "../../redux/features/searchSlice";
 import avatar from "../../assets/myProfilePic.png";
+import { useAppSelector, useAppDispatch } from "../../hooks/hooks";
+import { toggleTheme } from "../../redux/features/themeSlice";
 
-const Header = ({ title, check, change }) => {
+interface HeaderProps {
+  title: string;
+  check: boolean;
+}
+
+const Header = ({ title, check }: HeaderProps) => {
+  const darkMode = useAppSelector((state) => state.theme.value);
+  const dispatch = useAppDispatch();
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
     height: 34,
@@ -64,7 +71,6 @@ const Header = ({ title, check, change }) => {
       borderRadius: 20 / 2,
     },
   }));
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   function handleClick() {
     dispatch(handleSearch(""));
@@ -80,7 +86,6 @@ const Header = ({ title, check, change }) => {
               edge="start"
               color="inherit"
               aria-label="menu"
-              sx={{ mr: 2 }}
               onClick={handleClick}
             >
               <Home />
@@ -98,8 +103,8 @@ const Header = ({ title, check, change }) => {
           <Grid item>
             <FormControlLabel
               control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-              label="Theme"
-              onChange={change}
+              label="Dark Mode"
+              onChange={() => dispatch(toggleTheme(!darkMode))}
               checked={check}
             />
           </Grid>

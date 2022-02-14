@@ -9,7 +9,20 @@ import { useNavigate } from "react-router-dom";
 import "./Card.css";
 import List from "../list/List";
 
-const CardBody = ({ countryDetail }) => {
+interface countryDetailProps {
+  countryDetail: {
+    flags: {
+      png: string;
+    };
+    name: {
+      official: string;
+    };
+    altSpellings: [];
+    region: string;
+  };
+}
+
+const CardBody = ({ countryDetail }: countryDetailProps) => {
   const navigate = useNavigate();
   return (
     <div className="card-container">

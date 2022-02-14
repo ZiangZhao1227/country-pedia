@@ -4,8 +4,17 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-const List = ({ countryDetail }) => {
-  const getfirstInput = (obj) => {
+interface countryDetailProps {
+  countryDetail: {
+    altSpellings: [];
+    region: string;
+    borders?: [];
+    currencies?: any;
+  };
+}
+
+const List = ({ countryDetail }: countryDetailProps) => {
+  const getfirstInput = (obj: string) => {
     const firstInput = Object.keys(obj)[0];
     return firstInput;
   };
@@ -44,7 +53,11 @@ const List = ({ countryDetail }) => {
           <Typography>Borders</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          {countryDetail.borders ? countryDetail.borders.join("\r\n") : <p>None borders</p>}
+          {countryDetail.borders ? (
+            countryDetail.borders.join("\r\n")
+          ) : (
+            <p>None borders</p>
+          )}
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -57,7 +70,8 @@ const List = ({ countryDetail }) => {
         </AccordionSummary>
         <AccordionDetails>
           {countryDetail.currencies ? (
-            countryDetail.currencies[getfirstInput(countryDetail.currencies)].name
+            countryDetail.currencies[getfirstInput(countryDetail.currencies)]
+              .name
           ) : (
             <p>None currencies</p>
           )}

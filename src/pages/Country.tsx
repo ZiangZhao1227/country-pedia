@@ -6,8 +6,14 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import Header from "../components/head/Header";
 import { useGetCountryByNameQuery } from "../redux/service/countries";
 
-const Country = ({ check, change }) => {
-  const { name } = useParams();
+interface CountryProps {
+  check: boolean;
+}
+
+const Country = ({ check }: CountryProps) => {
+  const { name } = useParams() as {
+    name: string;
+  };
   const { data, error, isLoading } = useGetCountryByNameQuery(name);
 
   if (isLoading) {
@@ -21,7 +27,7 @@ const Country = ({ check, change }) => {
   }
   return (
     <Fragment>
-      <Header title="Country Detail" check={check} change={change} />
+      <Header title="Country Detail" check={check} />
       <CardBody countryDetail={data[0]} />
     </Fragment>
   );

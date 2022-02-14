@@ -5,17 +5,15 @@
 
 .country-name-link {
   text-decoration: none;
+  color: #8d8d8d;
 }
 
 .country-name-link:hover {
-  color: rgb(5, 156, 144);
+  color: rgb(255, 115, 0);
+  font-weight: bolder;
 }
 
 .row-container__img {
   width: 8rem;
   height: 5rem;
-}
-
-.table-container {
-  margin-bottom: 850px;
 }

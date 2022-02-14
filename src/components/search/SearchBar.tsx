@@ -2,22 +2,15 @@ import Box from "@material-ui/core/Box";
 import TextField from "@material-ui/core/TextField";
 import Search from "@material-ui/icons/Search";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../../hooks/hooks";
 import debounce from "lodash.debounce";
 
 import { handleSearch } from "../../redux/features/searchSlice";
 
 const SearchBar = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   return (
-    <Box
-      component="form"
-      sx={{
-        "& > :not(style)": { m: 1, width: "60ch" },
-      }}
-      noValidate
-      autoComplete="off"
-    >
+    <Box component="form">
       <TextField
         id="outlined-basic"
         label="search by country"
@@ -25,6 +18,9 @@ const SearchBar = () => {
         onChange={debounce((e) => {
           dispatch(handleSearch(e.target.value));
         }, 500)}
+        onKeyPress={(e) => {
+          e.key === "Enter" && e.preventDefault();
+        }}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">

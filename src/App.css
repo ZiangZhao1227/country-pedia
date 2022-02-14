@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100vh;
 }
 
 .App-logo {
@@ -39,10 +40,18 @@
 
 /*add some styles*/
 .search-container {
-  margin-top: 85px;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
-.countries-info-container {
-  margin: 35px 70px;
+.app-logo {
+  margin-top: 150px;
+  font-family: 'Festive', cursive;
+  font-size: 100px;
 }
+
+#outlined-basic {
+  width: 800px!important;
+}
+
 
