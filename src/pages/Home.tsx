@@ -3,6 +3,8 @@ import CountreisTable from "../components/table/CountriesTable";
 import Header from "../components/head/Header";
 import { Fragment } from "react";
 import Logo from "../components/logo/Logo";
+import Form from "../components/sort/Form";
+import Grid from "@mui/material/Grid";
 
 interface HomeProps {
   check: boolean;
@@ -14,7 +16,14 @@ const Home = ({ check }: HomeProps) => {
       <Header title="Country List" check={check} />
       <Logo />
       <section className="search-container">
-        <SearchBar />
+        <Grid container>
+          <Grid item xs={10}>
+            <SearchBar />
+          </Grid>
+          <Grid item xs={2}>
+            <Form />
+          </Grid>
+        </Grid>
       </section>
       <section className="countries-info-container">
         <CountreisTable />

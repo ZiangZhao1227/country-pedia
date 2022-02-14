@@ -1,11 +1,11 @@
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../hooks/hooks";
-import { Fragment } from "react";
+import { Fragment, useCallback } from "react";
 import CircleIcon from "@mui/icons-material/Circle";
 
 import "./Table.css";
+import { useAppSelector } from "../../hooks/hooks";
 import Favorite from "./Favorite";
 
 interface dataProps {
@@ -34,6 +34,36 @@ interface filteredCountriesProps {
 }
 
 const Row = ({ data }: dataProps) => {
+  const sortBy = useAppSelector((state) => state.sort.value);
+  const fitlerHandler = useCallback(
+    (countries) => {
+      if (sortBy === "") {
+        return [...countries]
+      }
+      if (sortBy === "populationAsc") {
+        return [...countries].sort((a, b) =>
+          b.population < a.population ? 1 : b.population > a.population ? -1 : 0
+        );
+      }
+      if (sortBy === "populationDes") {
+        return [...countries].sort((a, b) =>
+          b.population < a.population ? -1 : b.population > a.population ? 1 : 0
+        );
+      }
+      if (sortBy === "nameAsc") {
+        return [...countries].sort((a, b) =>
+          b.name.common < a.name.common ? 1 : b.name.common > a.name.common ? -1 : 0
+        );
+      }
+      if (sortBy === "nameDes") {
+        return [...countries].sort((a, b) =>
+          b.name.common < a.name.common ? -1 : b.name.common > a.name.common ? 1 : 0
+        );
+      }
+    },
+    [sortBy]
+  );
+
   const numFormatter = (num: number) => {
     if (num > 999 && num < 1000000) {
       return (num / 1000).toFixed(1) + "K"; // convert to K for number from > 1000 < 1 million
@@ -43,6 +73,7 @@ const Row = ({ data }: dataProps) => {
       return num; // if value < 1000, nothing to do
     }
   };
+  
   const getCountryLanguages = (country: { [key: string]: string }) => {
     let languages = [];
     for (let item in country) {
@@ -63,7 +94,7 @@ const Row = ({ data }: dataProps) => {
 
   return (
     <Fragment>
-      {filteredCountries(data).map((country: CountryProps) => (
+      {fitlerHandler(filteredCountries(data))?.map((country: CountryProps) => (
         <TableRow key={country.name.official} className="row-container">
           <TableCell align="center" component="th" scope="row">
             <img
