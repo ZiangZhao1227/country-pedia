@@ -77,6 +77,10 @@ const Header = ({ title, check }: HeaderProps) => {
     navigate("/");
     window.scrollTo(0, 0);
   }
+  const changeTheme = () => {
+    localStorage.setItem("dark", darkMode ? "light" : "dark");
+    dispatch(toggleTheme(!darkMode));
+  };
   return (
     <Grid container>
       <AppBar position="fixed">
@@ -104,7 +108,7 @@ const Header = ({ title, check }: HeaderProps) => {
             <FormControlLabel
               control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
               label="Dark Mode"
-              onChange={() => dispatch(toggleTheme(!darkMode))}
+              onChange={changeTheme}
               checked={check}
             />
           </Grid>

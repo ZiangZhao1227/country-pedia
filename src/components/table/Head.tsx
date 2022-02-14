@@ -13,6 +13,7 @@ const Head = () => {
         <TableCell align="center">POPULATION&nbsp;</TableCell>
         <TableCell align="center">REGION&nbsp;</TableCell>
         <TableCell align="center">LANGUAGES&nbsp;</TableCell>
+        <TableCell align="center">FAVORITE&nbsp;</TableCell>
       </TableRow>
     </TableHead>
   );

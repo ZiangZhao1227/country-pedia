@@ -91,6 +91,9 @@ const Row = ({ data }: dataProps) => {
               </div>
             ))}
           </TableCell>
+          <TableCell align="center">
+            favorite
+          </TableCell>
         </TableRow>
       ))}
     </Fragment>
