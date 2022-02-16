@@ -15,6 +15,7 @@ import { handleSearch } from "../../redux/features/searchSlice";
 import avatar from "../../assets/myProfilePic.png";
 import { useAppSelector, useAppDispatch } from "../../hooks/hooks";
 import { toggleTheme } from "../../redux/features/themeSlice";
+import FavoriteList from "./FavoriteList";
 
 interface HeaderProps {
   title: string;
@@ -82,7 +83,7 @@ const Header = ({ title, check }: HeaderProps) => {
     dispatch(toggleTheme(!darkMode));
   };
   return (
-    <Grid container>
+    <Grid container direction="row" justify="center" alignItems="center">
       <AppBar position="fixed">
         <Toolbar variant="dense">
           <Grid item>
@@ -101,6 +102,9 @@ const Header = ({ title, check }: HeaderProps) => {
             </Typography>
           </Grid>
           <Grid item xs />
+          <Grid item xs={1}>
+            <FavoriteList/>
+          </Grid>
           <Grid item>
             <DarkModeIcon />
           </Grid>
