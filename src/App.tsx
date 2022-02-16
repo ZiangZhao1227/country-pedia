@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import "./App.css";
 import Home from "./pages/Home";
 import Country from "./pages/Country";
+import NotFound from "./pages/NotFound";
 import { toggleTheme } from "./redux/features/themeSlice";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
               path="/country/:name"
               element={<Country check={darkMode} />}
             />
+            <Route path="*" element={<NotFound check={darkMode} />} />
           </Routes>
         </div>
       </Paper>
