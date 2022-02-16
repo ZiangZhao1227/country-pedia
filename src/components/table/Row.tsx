@@ -38,7 +38,7 @@ const Row = ({ data }: dataProps) => {
   const fitlerHandler = useCallback(
     (countries) => {
       if (sortBy === "") {
-        return [...countries]
+        return [...countries];
       }
       if (sortBy === "populationAsc") {
         return [...countries].sort((a, b) =>
@@ -52,12 +52,20 @@ const Row = ({ data }: dataProps) => {
       }
       if (sortBy === "nameAsc") {
         return [...countries].sort((a, b) =>
-          b.name.common < a.name.common ? 1 : b.name.common > a.name.common ? -1 : 0
+          b.name.common < a.name.common
+            ? 1
+            : b.name.common > a.name.common
+            ? -1
+            : 0
         );
       }
       if (sortBy === "nameDes") {
         return [...countries].sort((a, b) =>
-          b.name.common < a.name.common ? -1 : b.name.common > a.name.common ? 1 : 0
+          b.name.common < a.name.common
+            ? -1
+            : b.name.common > a.name.common
+            ? 1
+            : 0
         );
       }
     },
@@ -73,7 +81,7 @@ const Row = ({ data }: dataProps) => {
       return num; // if value < 1000, nothing to do
     }
   };
-  
+
   const getCountryLanguages = (country: { [key: string]: string }) => {
     let languages = [];
     for (let item in country) {
@@ -95,7 +103,7 @@ const Row = ({ data }: dataProps) => {
   return (
     <Fragment>
       {fitlerHandler(filteredCountries(data))?.map((country: CountryProps) => (
-        <TableRow key={country.name.official} className="row-container">
+        <TableRow key={country.name.common} className="row-container">
           <TableCell align="center" component="th" scope="row">
             <img
               src={country.flags.png}
@@ -105,7 +113,7 @@ const Row = ({ data }: dataProps) => {
           </TableCell>
           <TableCell align="center">
             <Link
-              to={`/country/${country.name.official}`}
+              to={`/country/${country.name.common}`}
               className="country-name-link"
             >
               {country.name.common}
@@ -124,7 +132,7 @@ const Row = ({ data }: dataProps) => {
             ))}
           </TableCell>
           <TableCell align="center">
-            <Favorite />
+            <Favorite name={country.name.common}/>
           </TableCell>
         </TableRow>
       ))}

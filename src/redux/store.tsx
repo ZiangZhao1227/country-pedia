@@ -5,6 +5,7 @@ import { countriesApi } from "./service/countries";
 import searchReducer from "./features/searchSlice";
 import themeReducer from "./features/themeSlice";
 import sortReducer from "./features/sortSlice";
+import favoriteReducer from "./features/favoriteSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     search: searchReducer,
     theme: themeReducer,
     sort: sortReducer,
+    favorite: favoriteReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(countriesApi.middleware),
