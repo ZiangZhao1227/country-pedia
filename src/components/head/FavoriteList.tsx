@@ -6,7 +6,6 @@ import { useAppSelector } from "../../hooks/hooks";
 
 const FavoriteList = () => {
   const LikedCountryList = useAppSelector((state) => state.favorite.value);
-  console.log(LikedCountryList.length);
   return (
     <IconButton>
       <FavoriteIcon sx={{ fontSize: 40 }} color="error" />

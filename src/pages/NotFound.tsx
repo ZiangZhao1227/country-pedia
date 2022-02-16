@@ -8,7 +8,7 @@ interface NotFoundProps {
 const NotFound = ({ check }:NotFoundProps) => {
   return (
     <div>
-      <Header title="CountryDetail" check={check} />
+      <Header title="404 Error" check={check} />
       <h2 style={{marginTop:"100px"}}>Sorry</h2>
       <p>That page cannot be found</p>
       <Link to="/">Back to the home page</Link>
