@@ -17,3 +17,7 @@
   width: 8rem;
   height: 5rem;
 }
+
+.table-head-container__header {
+  font-family: 'Shizuru', cursive!important;
+}

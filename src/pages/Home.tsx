@@ -13,7 +13,7 @@ interface HomeProps {
 const Home = ({ check }: HomeProps) => {
   return (
     <Fragment>
-      <Header title="Country List" check={check} />
+      <Header title="CountryList" check={check} />
       <Logo />
       <section className="search-container">
         <Grid container>

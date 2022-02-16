@@ -97,7 +97,7 @@ const Header = ({ title, check }: HeaderProps) => {
             </IconButton>
           </Grid>
           <Grid item>
-            <Typography variant="h5" color="inherit" component="div">
+            <Typography variant="h5" color="inherit" component="div" className="header__style">
               {title}
             </Typography>
           </Grid>

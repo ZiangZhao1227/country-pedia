@@ -27,7 +27,7 @@ const Country = ({ check }: CountryProps) => {
   }
   return (
     <Fragment>
-      <Header title="Country Detail" check={check} />
+      <Header title="CountryDetail" check={check} />
       <CardBody countryDetail={data[0]} />
     </Fragment>
   );
