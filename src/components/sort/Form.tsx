@@ -20,6 +20,9 @@ const Form = () => {
           dispatch(handleSort(e.target.value));
         }}
       >
+        <MenuItem value={""}>
+          <em>None</em>
+        </MenuItem>
         <MenuItem value={"populationDes"}>Population Desc</MenuItem>
         <MenuItem value={"populationAsc"}>Population Asc</MenuItem>
         <MenuItem value={"nameDes"}>Name Des</MenuItem>

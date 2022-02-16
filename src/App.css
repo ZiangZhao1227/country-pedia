@@ -47,8 +47,7 @@
 
 .app-logo {
   margin-top: 150px;
-  font-family: 'Festive', cursive;
+  font-family: "Festive", cursive;
   font-size: 100px;
+  transition: ease 2s;
 }
-
-

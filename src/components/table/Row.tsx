@@ -132,7 +132,7 @@ const Row = ({ data }: dataProps) => {
             ))}
           </TableCell>
           <TableCell align="center">
-            <Favorite name={country.name.common}/>
+            <Favorite name={country.name.common} />
           </TableCell>
         </TableRow>
       ))}
