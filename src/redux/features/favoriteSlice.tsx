@@ -6,15 +6,15 @@ interface InitialStateProps {
 }
 
 interface favoriteProps {
-  type: string,
-  payload: string
+  type: string;
+  payload: string;
 }
 
 const initialState: InitialStateProps = {
   value:
     typeof window !== "undefined"
       ? localStorage.getItem("favorite")
-        ? JSON.parse(localStorage.getItem("favorite") || '[]')
+        ? JSON.parse(localStorage.getItem("favorite") || "[]")
         : []
       : [],
 };
@@ -35,10 +35,15 @@ export const favoriteSlice = createSlice({
       if (localStorage.getItem("favorite")?.length === 0)
         localStorage.removeItem("favorite");
     },
+    clearFavorite: (state) => {
+      state.value = [];
+      localStorage.removeItem("favorite");
+    },
   },
 });
 
-export const { addFavorite, removeFavorite } = favoriteSlice.actions;
+export const { addFavorite, removeFavorite, clearFavorite } =
+  favoriteSlice.actions;
 
 export const selectFavorite = (state: RootState) => state.favorite.value;
 

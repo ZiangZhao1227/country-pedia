@@ -8,6 +8,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import Country from "./pages/Country";
 import NotFound from "./pages/NotFound";
+import Favorite from "./pages/Favorite";
 import { toggleTheme } from "./redux/features/themeSlice";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
               element={<Country check={darkMode} />}
             />
             <Route path="*" element={<NotFound check={darkMode} />} />
+            <Route path="/favorite" element={<Favorite check={darkMode} />} />
           </Routes>
         </div>
       </Paper>

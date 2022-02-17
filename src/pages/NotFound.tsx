@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import Header from "../components/head/Header";
 
 interface NotFoundProps {
-    check: boolean;
-  }
+  check: boolean;
+}
 
-const NotFound = ({ check }:NotFoundProps) => {
+const NotFound = ({ check }: NotFoundProps) => {
   return (
     <div>
       <Header title="404 Error" check={check} />
-      <h2 style={{marginTop:"100px"}}>Sorry</h2>
+      <h2 style={{ marginTop: "100px" }}>Sorry</h2>
       <p>That page cannot be found</p>
       <Link to="/">Back to the home page</Link>
     </div>
