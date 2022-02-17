@@ -9,7 +9,7 @@ import { useAppSelector } from "../../hooks/hooks";
 import Favorite from "./Favorite";
 
 interface dataProps {
-  data: [];
+  data: [] | undefined;
 }
 
 interface CountryProps {
@@ -91,11 +91,11 @@ const Row = ({ data }: dataProps) => {
   };
 
   const searchTerm = useAppSelector((state) => state.search.value);
-  const filteredCountries = (array: []) => {
+  const filteredCountries = (array: [] | undefined) => {
     if (!searchTerm) {
       return array;
     }
-    return array.filter((country: filteredCountriesProps) =>
+    return array?.filter((country: filteredCountriesProps) =>
       country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
     );
   };

@@ -3,7 +3,7 @@ import TableBody from "@material-ui/core/TableBody";
 import Row from "./Row";
 
 interface dataProps {
-  data: [];
+  data: [] | undefined;
 }
 
 const Body = ({ data }: dataProps) => {
