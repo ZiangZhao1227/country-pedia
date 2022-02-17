@@ -1,7 +1,7 @@
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import { Link } from "react-router-dom";
+import { Badge } from "@mui/material";
 
 import { useAppSelector } from "../../hooks/hooks";
 
@@ -10,15 +10,9 @@ const FavoriteList = () => {
   return (
     <Link to={`/favorite`} style={{ textDecoration: "none" }}>
       <IconButton>
-        <FavoriteIcon sx={{ fontSize: 40 }} color="error" />
-        <Typography
-          variant="h5"
-          color="inherit"
-          component="div"
-          style={{ marginLeft: "6px" }}
-        >
-          {LikedCountryList.length}
-        </Typography>
+      <Badge badgeContent={LikedCountryList.length} color="secondary">
+        <FavoriteIcon sx={{ fontSize: 35 }} color="error" />
+        </Badge>
       </IconButton>
     </Link>
   );

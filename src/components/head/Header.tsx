@@ -97,13 +97,18 @@ const Header = ({ title, check }: HeaderProps) => {
             </IconButton>
           </Grid>
           <Grid item>
-            <Typography variant="h5" color="inherit" component="div" className="header__style">
+            <Typography
+              variant="h5"
+              color="inherit"
+              component="div"
+              className="header__style"
+            >
               {title}
             </Typography>
           </Grid>
           <Grid item xs />
-          <Grid item xs={1}>
-            <FavoriteList/>
+          <Grid item>
+            <FavoriteList />
           </Grid>
           <Grid item>
             <DarkModeIcon />
@@ -111,7 +116,7 @@ const Header = ({ title, check }: HeaderProps) => {
           <Grid item>
             <FormControlLabel
               control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-              label="Dark Mode"
+              label="Change Mode"
               onChange={changeTheme}
               checked={check}
             />
