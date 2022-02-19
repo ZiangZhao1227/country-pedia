@@ -16,19 +16,22 @@ const Country = ({ check }: CountryProps) => {
   };
   const { data, error, isLoading } = useGetCountryByNameQuery(name);
 
-  if (isLoading) {
-    return (
-      <p>
-        Loading... <LinearProgress />
-      </p>
-    );
-  } else if (error) {
-    return <p>Oh no, there was an error</p>;
-  }
   return (
     <Fragment>
-      <Header title="CountryDetail" check={check} />
-      <CardBody countryDetail={data[0]} />
+      {error ? (
+        <>Oh no, there was an error</>
+      ) : isLoading ? (
+        <>
+          Loading... <LinearProgress />
+        </>
+      ) : data ? (
+        <>
+          <Fragment>
+            <Header title="CountryDetail" check={check} />
+            <CardBody countryDetail={data[0]} />
+          </Fragment>
+        </>
+      ) : null}
     </Fragment>
   );
 };

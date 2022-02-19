@@ -11,7 +11,19 @@ import List from "../list/List";
 import { Fragment } from "react";
 import Logo from "../../components/logo/Logo";
 
-interface countryDetailProps {
+interface indexProps {
+  flags: {
+    png: string;
+  };
+  name: {
+    official: string;
+  };
+  altSpellings: [];
+  region: string;
+}
+
+export interface countryDetailProps {
+  [key: number]: indexProps;
   countryDetail: {
     flags: {
       png: string;
