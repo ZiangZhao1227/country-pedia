@@ -15,7 +15,7 @@ import { handleSearch } from "../../redux/features/searchSlice";
 import avatar from "../../assets/myProfilePic.png";
 import { useAppSelector, useAppDispatch } from "../../hooks/hooks";
 import { toggleTheme } from "../../redux/features/themeSlice";
-import FavoriteList from "./FavoriteList";
+import FavoriteList from "./HeaderFavoriteIcon";
 import { HeaderProps } from "../../types/Types";
 
 const Header = ({ title, check }: HeaderProps) => {

@@ -7,7 +7,7 @@ import Box from "@material-ui/core/Box";
 import { useNavigate } from "react-router-dom";
 
 import "./Card.css";
-import List from "../list/List";
+import List from "../list/CardDetailList";
 import { Fragment } from "react";
 import Logo from "../../components/logo/Logo";
 import { CountryBodyProps } from "../../types/Types";

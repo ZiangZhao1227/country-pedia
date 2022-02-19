@@ -8,7 +8,7 @@ import Body from "./Body";
 import { useGetCountriesQuery } from "../../redux/service/countries";
 import "./Table.css";
 
-const CountriesTable = () => {
+const Container = () => {
   const { data, error, isLoading } = useGetCountriesQuery();
   if (isLoading) {
     return (
@@ -29,4 +29,4 @@ const CountriesTable = () => {
   );
 };
 
-export default CountriesTable;
+export default Container;
