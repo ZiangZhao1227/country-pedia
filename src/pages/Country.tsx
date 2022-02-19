@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { useParams } from "react-router-dom";
-import CardBody from "../components/card/CardBody";
 import LinearProgress from "@material-ui/core/LinearProgress";
 
+import CardBody from "../components/card/CardBody";
 import Header from "../components/head/Header";
 import { useGetCountryByNameQuery } from "../redux/service/countries";
 import { CheckProps } from "../types/Types";

@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import { Paper } from "@material-ui/core";
-import { useAppSelector, useAppDispatch } from "./hooks/hooks";
 import { useEffect } from "react";
 
+import { useAppSelector, useAppDispatch } from "./hooks/hooks";
 import "./App.css";
 import Home from "./pages/Home";
 import Country from "./pages/Country";

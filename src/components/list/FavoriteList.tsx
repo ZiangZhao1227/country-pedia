@@ -5,9 +5,9 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { Link } from "react-router-dom";
+import { Grid } from "@material-ui/core";
 
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { Grid } from "@material-ui/core";
 import {
   removeFavorite,
   clearFavorite,

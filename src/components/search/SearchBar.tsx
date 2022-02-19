@@ -1,9 +1,9 @@
 import TextField from "@material-ui/core/TextField";
 import Search from "@material-ui/icons/Search";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import { useAppDispatch } from "../../hooks/hooks";
 import debounce from "lodash.debounce";
 
+import { useAppDispatch } from "../../hooks/hooks";
 import { handleSearch } from "../../redux/features/searchSlice";
 
 const SearchBar = () => {

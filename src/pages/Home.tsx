@@ -1,10 +1,12 @@
+import Grid from "@mui/material/Grid";
+
 import SearchBar from "../components/search/SearchBar";
 import CountreisTable from "../components/table/CountriesTable";
 import Header from "../components/head/Header";
 import { Fragment } from "react";
 import Logo from "../components/logo/Logo";
 import Form from "../components/sort/Form";
-import Grid from "@mui/material/Grid";
+
 
 import { CheckProps } from "../types/Types";
 

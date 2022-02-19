@@ -3,6 +3,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { Fragment } from "react";
 
 import { CountryListProps } from "../../types/Types";
 
@@ -12,7 +13,7 @@ const List = ({ countryDetail }: CountryListProps) => {
     return firstInput;
   };
   return (
-    <div>
+    <Fragment>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -70,7 +71,7 @@ const List = ({ countryDetail }: CountryListProps) => {
           )}
         </AccordionDetails>
       </Accordion>
-    </div>
+    </Fragment>
   );
 };
 

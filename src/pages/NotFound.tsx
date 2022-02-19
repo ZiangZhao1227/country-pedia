@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Header from "../components/head/Header";
 
+import Header from "../components/head/Header";
 import { CheckProps } from "../types/Types";
 
 const NotFound = ({ check }: CheckProps) => {
