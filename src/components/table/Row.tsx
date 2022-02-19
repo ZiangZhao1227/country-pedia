@@ -6,7 +6,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 
 import "./Table.css";
 import { useAppSelector } from "../../hooks/hooks";
-import Favorite from "./Favorite";
+import Favorite from "./FavoriteIcon";
 import { BodydataProps } from "../../types/Types";
 import { RowProps } from "../../types/Types";
 import { filteredCountriesProps } from "../../types/Types";
