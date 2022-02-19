@@ -8,12 +8,9 @@ import {
   addFavorite,
   removeFavorite,
 } from "../../redux/features/favoriteSlice";
+import { FavoritenameProps } from "../../types/Types";
 
-interface nameProps {
-  name: string;
-}
-
-const Favourite = ({ name }: nameProps) => {
+const Favourite = ({ name }: FavoritenameProps) => {
   const LikedCountryList = useAppSelector((state) => state.favorite.value);
   const dispatch = useAppDispatch();
 

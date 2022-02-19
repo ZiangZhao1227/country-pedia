@@ -6,11 +6,9 @@ import Logo from "../components/logo/Logo";
 import Form from "../components/sort/Form";
 import Grid from "@mui/material/Grid";
 
-interface HomeProps {
-  check: boolean;
-}
+import { CheckProps } from "../types/Types";
 
-const Home = ({ check }: HomeProps) => {
+const Home = ({ check }: CheckProps) => {
   return (
     <Fragment>
       <Header title="CountryList" check={check} />

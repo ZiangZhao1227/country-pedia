@@ -10,8 +10,8 @@ const FavoriteList = () => {
   return (
     <Link to={`/favorite`} style={{ textDecoration: "none" }}>
       <IconButton>
-      <Badge badgeContent={LikedCountryList.length} color="secondary">
-        <FavoriteIcon sx={{ fontSize: 35 }} color="error" />
+        <Badge badgeContent={LikedCountryList.length} color="secondary">
+          <FavoriteIcon sx={{ fontSize: 35 }} color="error" />
         </Badge>
       </IconButton>
     </Link>

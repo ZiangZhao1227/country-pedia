@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 import Header from "../components/head/Header";
 
-interface NotFoundProps {
-  check: boolean;
-}
+import { CheckProps } from "../types/Types";
 
-const NotFound = ({ check }: NotFoundProps) => {
+const NotFound = ({ check }: CheckProps) => {
   return (
     <div>
       <Header title="404 Error" check={check} />

@@ -10,33 +10,9 @@ import "./Card.css";
 import List from "../list/List";
 import { Fragment } from "react";
 import Logo from "../../components/logo/Logo";
+import { CountryBodyProps } from "../../types/Types";
 
-interface indexProps {
-  flags: {
-    png: string;
-  };
-  name: {
-    official: string;
-  };
-  altSpellings: [];
-  region: string;
-}
-
-export interface countryDetailProps {
-  [key: number]: indexProps;
-  countryDetail: {
-    flags: {
-      png: string;
-    };
-    name: {
-      official: string;
-    };
-    altSpellings: [];
-    region: string;
-  };
-}
-
-const CardBody = ({ countryDetail }: countryDetailProps) => {
+const CardBody = ({ countryDetail }: CountryBodyProps) => {
   const navigate = useNavigate();
   return (
     <Fragment>

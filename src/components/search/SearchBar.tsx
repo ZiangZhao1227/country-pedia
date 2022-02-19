@@ -12,7 +12,7 @@ const SearchBar = () => {
     <TextField
       id="outlined-basic"
       label="search by country"
-      fullWidth 
+      fullWidth
       variant="outlined"
       onChange={debounce((e) => {
         dispatch(handleSearch(e.target.value));

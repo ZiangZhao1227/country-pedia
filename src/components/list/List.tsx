@@ -4,23 +4,9 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-interface Currencies {
-  [key: string]: {
-    name: string;
-    symbol: string;
-  };
-}
+import { CountryListProps } from "../../types/Types";
 
-interface countryDetailProps {
-  countryDetail: {
-    altSpellings: [];
-    region: string;
-    borders?: [];
-    currencies?: Currencies;
-  };
-}
-
-const List = ({ countryDetail }: countryDetailProps) => {
+const List = ({ countryDetail }: CountryListProps) => {
   const getfirstInput = (obj: {}) => {
     const firstInput = Object.keys(obj)[0];
     return firstInput;

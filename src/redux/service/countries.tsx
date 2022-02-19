@@ -1,6 +1,6 @@
 // Need to use the React-specific entry point to import createApi
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { countryDetailProps } from "../../components/card/CardBody";
+import { CountryBodyProps } from "../../types/Types";
 
 // Define a service using a base URL and expected endpoints
 export const countriesApi = createApi({
@@ -10,7 +10,7 @@ export const countriesApi = createApi({
     getCountries: builder.query<[] | undefined, void>({
       query: () => `all`,
     }),
-    getCountryByName: builder.query<countryDetailProps, string>({
+    getCountryByName: builder.query<CountryBodyProps, string>({
       query: (name) => `name/${name}`,
     }),
   }),

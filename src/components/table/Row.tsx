@@ -7,33 +7,11 @@ import CircleIcon from "@mui/icons-material/Circle";
 import "./Table.css";
 import { useAppSelector } from "../../hooks/hooks";
 import Favorite from "./Favorite";
+import { BodydataProps } from "../../types/Types";
+import { RowProps } from "../../types/Types";
+import { filteredCountriesProps } from "../../types/Types";
 
-interface dataProps {
-  data: [] | undefined;
-}
-
-interface CountryProps {
-  flags: {
-    png: string;
-  };
-  name: {
-    official: string;
-    common: string;
-  };
-  population: number;
-  languages: {
-    [key: string]: string;
-  };
-  region: string;
-}
-
-interface filteredCountriesProps {
-  name: {
-    common: string;
-  };
-}
-
-const Row = ({ data }: dataProps) => {
+const Row = ({ data }: BodydataProps) => {
   const sortBy = useAppSelector((state) => state.sort.value);
   const fitlerHandler = useCallback(
     (countries) => {
@@ -102,7 +80,7 @@ const Row = ({ data }: dataProps) => {
 
   return (
     <Fragment>
-      {fitlerHandler(filteredCountries(data))?.map((country: CountryProps) => (
+      {fitlerHandler(filteredCountries(data))?.map((country: RowProps) => (
         <TableRow key={country.name.common} className="row-container">
           <TableCell align="center" component="th" scope="row">
             <img

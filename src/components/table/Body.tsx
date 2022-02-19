@@ -1,12 +1,9 @@
 import TableBody from "@material-ui/core/TableBody";
 
 import Row from "./Row";
+import { BodydataProps } from "../../types/Types";
 
-interface dataProps {
-  data: [] | undefined;
-}
-
-const Body = ({ data }: dataProps) => {
+const Body = ({ data }: BodydataProps) => {
   return (
     <TableBody>
       <Row data={data} />

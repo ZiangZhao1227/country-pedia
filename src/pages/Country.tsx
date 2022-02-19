@@ -5,12 +5,9 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 
 import Header from "../components/head/Header";
 import { useGetCountryByNameQuery } from "../redux/service/countries";
+import { CheckProps } from "../types/Types";
 
-interface CountryProps {
-  check: boolean;
-}
-
-const Country = ({ check }: CountryProps) => {
+const Country = ({ check }: CheckProps) => {
   const { name } = useParams() as {
     name: string;
   };

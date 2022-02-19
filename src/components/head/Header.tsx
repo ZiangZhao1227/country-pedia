@@ -16,11 +16,7 @@ import avatar from "../../assets/myProfilePic.png";
 import { useAppSelector, useAppDispatch } from "../../hooks/hooks";
 import { toggleTheme } from "../../redux/features/themeSlice";
 import FavoriteList from "./FavoriteList";
-
-interface HeaderProps {
-  title: string;
-  check: boolean;
-}
+import { HeaderProps } from "../../types/Types";
 
 const Header = ({ title, check }: HeaderProps) => {
   const darkMode = useAppSelector((state) => state.theme.value);

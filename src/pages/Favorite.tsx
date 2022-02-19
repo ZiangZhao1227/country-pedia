@@ -9,12 +9,9 @@ import Header from "../components/head/Header";
 import Logo from "../components/logo/Logo";
 import FavoriteList from "../components/list/FavoriteList";
 import "../components/card/Card.css";
+import { CheckProps } from "../types/Types";
 
-interface FavoriteProps {
-  check: boolean;
-}
-
-const Favorite = ({ check }: FavoriteProps) => {
+const Favorite = ({ check }: CheckProps) => {
   const navigate = useNavigate();
   return (
     <Fragment>
