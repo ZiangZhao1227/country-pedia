@@ -8,23 +8,30 @@ import {
   addFavorite,
   removeFavorite,
 } from "../../redux/features/favoriteSlice";
-import { FavoritenameProps } from "../../types/Types";
+import { FavoritenameProps, CountryObjectProps } from "../../types/Types";
 
-const Favourite = ({ name }: FavoritenameProps) => {
+const Favourite = ({ countryObject }: FavoritenameProps) => {
   const LikedCountryList = useAppSelector((state) => state.favorite.value);
   const dispatch = useAppDispatch();
 
   const handleToggleFavourite = useCallback(() => {
-    const country = name;
-    if (LikedCountryList.includes(country)) {
+    const country = countryObject;
+    if (
+      LikedCountryList.some(
+        (item: CountryObjectProps) => item.CountryName === country.CountryName
+      )
+    ) {
       dispatch(removeFavorite(country));
     } else {
       dispatch(addFavorite(country));
     }
-  }, [LikedCountryList, dispatch, name]);
+  }, [LikedCountryList, dispatch, countryObject]);
   return (
     <IconButton onClick={handleToggleFavourite}>
-      {LikedCountryList.includes(name) ? (
+      {LikedCountryList.some(
+        (country: CountryObjectProps) =>
+          country.CountryName === countryObject.CountryName
+      ) ? (
         <FavoriteIcon color="error" />
       ) : (
         <FavoriteBorderIcon color="error" />

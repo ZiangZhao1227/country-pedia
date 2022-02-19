@@ -110,7 +110,12 @@ const Row = ({ data }: BodydataProps) => {
             ))}
           </TableCell>
           <TableCell align="center">
-            <Favorite name={country.name.common} />
+            <Favorite
+              countryObject={{
+                CountryName: country.name.common,
+                CountryFlag: country.flags.png,
+              }}
+            />
           </TableCell>
         </TableRow>
       ))}

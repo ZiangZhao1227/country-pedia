@@ -77,6 +77,10 @@ const Header = ({ title, check }: HeaderProps) => {
     localStorage.setItem("dark", darkMode ? "light" : "dark");
     dispatch(toggleTheme(!darkMode));
   };
+  const toMyGitHub = () => {
+    window.location.href =
+      "https://github.com/ZiangZhao1227/fs9-frontend-project";
+  };
   return (
     <Grid container direction="row" justify="center" alignItems="center">
       <AppBar position="fixed" style={{ background: "#8d8d8d" }}>
@@ -114,7 +118,9 @@ const Header = ({ title, check }: HeaderProps) => {
             />
           </Grid>
           <Grid item>
-            <Avatar src={avatar} />
+            <IconButton onClick={toMyGitHub}>
+              <Avatar src={avatar} />
+            </IconButton>
           </Grid>
         </Toolbar>
       </AppBar>

@@ -1,17 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import type { RootState } from "../../redux/store";
+import { CountryObjectProps } from "../../types/Types";
 
-interface InitialStateProps {
-  value: string[];
-}
-
-interface favoriteProps {
-  type: string;
-  payload: string;
-}
-
-const initialState: InitialStateProps = {
+const initialState = {
   value:
     typeof window !== "undefined"
       ? localStorage.getItem("favorite")
@@ -24,13 +16,14 @@ export const favoriteSlice = createSlice({
   name: "favorite",
   initialState,
   reducers: {
-    addFavorite: (state, action: favoriteProps) => {
+    addFavorite: (state, action) => {
       state.value.push(action.payload);
       localStorage.setItem("favorite", JSON.stringify(state.value));
     },
     removeFavorite: (state, action) => {
       state.value = state.value.filter(
-        (country: string) => country !== action.payload
+        (item: CountryObjectProps) =>
+          item.CountryName !== action.payload.CountryName
       );
       localStorage.setItem("favorite", JSON.stringify(state.value));
       if (localStorage.getItem("favorite")?.length === 0)

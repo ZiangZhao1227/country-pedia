@@ -24,10 +24,10 @@ const Form = () => {
         <MenuItem value={""}>
           <em>None</em>
         </MenuItem>
-        <MenuItem value={"populationDes"}>Population Desc</MenuItem>
-        <MenuItem value={"populationAsc"}>Population Asc</MenuItem>
-        <MenuItem value={"nameDes"}>Name Des</MenuItem>
-        <MenuItem value={"nameAsc"}>Name Asc</MenuItem>
+        <MenuItem value={"populationDes"}>Population ↓</MenuItem>
+        <MenuItem value={"populationAsc"}>Population ↑</MenuItem>
+        <MenuItem value={"nameDes"}>Name ↓</MenuItem>
+        <MenuItem value={"nameAsc"}>Name ↑</MenuItem>
       </Select>
     </FormControl>
   );

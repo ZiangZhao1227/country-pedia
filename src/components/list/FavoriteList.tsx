@@ -12,6 +12,7 @@ import {
   removeFavorite,
   clearFavorite,
 } from "../../redux/features/favoriteSlice";
+import { FavoriteListCountryProps } from "../../types/Types";
 
 const FavoriteList = () => {
   const getFavoriteList = useAppSelector((state) => state.favorite.value);
@@ -34,25 +35,36 @@ const FavoriteList = () => {
           <DeleteForeverIcon color="error" fontSize="large" />
         </IconButton>
       </Typography>
-      {getFavoriteList.map((country) => {
+      {getFavoriteList.map((country: FavoriteListCountryProps) => {
         return (
           <Grid
             container
-            key={country}
+            key={country.CountryName}
             direction="row"
             justifyContent="center"
             alignItems="center"
+            className="favorite-countey-container"
           >
             {" "}
-            <Grid item xs>
+            <Grid item>
               <CircleIcon style={{ fontSize: "10px", marginRight: "6px" }} />
             </Grid>
-            <Grid item xs={9}>
-              <Link to={`/country/${country}`} className="country-name-link">
-                {country}
-              </Link>
+            <Grid item>
+              <img
+                src={country.CountryFlag}
+                alt="country Flag"
+                style={{ height: "40px", width: "60px" }}
+              />
             </Grid>
             <Grid item xs>
+              <Link
+                to={`/country/${country.CountryName}`}
+                className="country-name-link"
+              >
+                {country.CountryName}
+              </Link>
+            </Grid>
+            <Grid item>
               <IconButton onClick={() => dispatch(removeFavorite(country))}>
                 <DeleteIcon color="error" />
               </IconButton>

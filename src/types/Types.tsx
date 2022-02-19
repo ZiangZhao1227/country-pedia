@@ -40,7 +40,19 @@ export interface BodydataProps {
 }
 
 export interface FavoritenameProps {
-  name: string;
+  countryObject: {
+    CountryName: string;
+    CountryFlag: string;
+  };
+}
+
+export interface CountryObjectProps {
+  CountryName: string;
+}
+
+export interface FavoriteListCountryProps {
+  CountryName: string;
+  CountryFlag: string;
 }
 
 export interface RowProps {
