@@ -6,7 +6,6 @@ import Home from "@material-ui/icons/Home";
 import Avatar from "@material-ui/core/Avatar";
 import { useNavigate } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { Switch } from "@material-ui/core";
 import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -80,7 +79,7 @@ const Header = ({ title, check }: HeaderProps) => {
   };
   return (
     <Grid container direction="row" justify="center" alignItems="center">
-      <AppBar position="fixed">
+      <AppBar position="fixed" style={{ background: "#8d8d8d" }}>
         <Toolbar variant="dense">
           <Grid item>
             <IconButton
@@ -105,9 +104,6 @@ const Header = ({ title, check }: HeaderProps) => {
           <Grid item xs />
           <Grid item>
             <FavoriteList />
-          </Grid>
-          <Grid item>
-            <DarkModeIcon />
           </Grid>
           <Grid item>
             <FormControlLabel
