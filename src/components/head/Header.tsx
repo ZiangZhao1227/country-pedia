@@ -82,7 +82,7 @@ const Header = ({ title, check }: HeaderProps) => {
       "https://github.com/ZiangZhao1227/fs9-frontend-project";
   };
   return (
-    <Grid container direction="row" justify="center" alignItems="center">
+    <Grid container direction="row" justifyContent="center" alignItems="center">
       <AppBar position="fixed" style={{ background: "#8d8d8d" }}>
         <Toolbar variant="dense">
           <Grid item>

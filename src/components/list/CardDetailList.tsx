@@ -23,7 +23,7 @@ const List = ({ countryDetail }: CountryListProps) => {
           <Typography>Other Names</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>{countryDetail.altSpellings.join("\r\n")}</Typography>
+          <Typography>{countryDetail.altSpellings.join(" | ")}</Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -48,7 +48,7 @@ const List = ({ countryDetail }: CountryListProps) => {
         </AccordionSummary>
         <AccordionDetails>
           {countryDetail.borders ? (
-            countryDetail.borders.join("\r\n")
+            countryDetail.borders.join(" | ")
           ) : (
             <p>None borders</p>
           )}
