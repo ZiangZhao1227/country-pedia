@@ -1,24 +1,14 @@
 import Table from "@material-ui/core/Table";
 import TableContainer from "@material-ui/core/TableContainer";
 import Paper from "@material-ui/core/Paper";
-import LinearProgress from "@material-ui/core/LinearProgress";
 
 import Head from "./Head";
 import Body from "./Body";
-import { useGetCountriesQuery } from "../../redux/service/countries";
+import { BodydataProps } from "../../types/Types";
+
 import "./Table.css";
 
-const Container = () => {
-  const { data, error, isLoading } = useGetCountriesQuery();
-  if (isLoading) {
-    return (
-      <p>
-        Loading... <LinearProgress />
-      </p>
-    );
-  } else if (error) {
-    return <p>Oh no, there was an error</p>;
-  }
+const Container = ({ data }: BodydataProps) => {
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table" className="table-container">
