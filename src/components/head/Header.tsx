@@ -9,13 +9,15 @@ import Grid from "@material-ui/core/Grid";
 import { Switch } from "@material-ui/core";
 import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import Slide from "@mui/material/Slide";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
 
 import { handleSearch } from "../../redux/features/searchSlice";
 import avatar from "../../assets/myProfilePic.png";
 import { useAppSelector, useAppDispatch } from "../../hooks/hooks";
 import { toggleTheme } from "../../redux/features/themeSlice";
 import FavoriteList from "./HeaderFavoriteIcon";
-import { HeaderProps } from "../../types/Types";
+import { HeaderProps, ReactElementProps } from "../../types/Types";
 
 const Header = ({ title, check }: HeaderProps) => {
   const darkMode = useAppSelector((state) => state.theme.value);
@@ -67,12 +69,20 @@ const Header = ({ title, check }: HeaderProps) => {
       borderRadius: 20 / 2,
     },
   }));
+  const HideOnScroll = ({ children }: ReactElementProps) => {
+    const trigger = useScrollTrigger();
+    return (
+      <Slide appear={false} direction="down" in={!trigger}>
+        {children}
+      </Slide>
+    );
+  };
   const navigate = useNavigate();
-  function handleClick() {
+  const handleClick = () => {
     dispatch(handleSearch(""));
     navigate("/");
     window.scrollTo(0, 0);
-  }
+  };
   const changeTheme = () => {
     localStorage.setItem("dark", darkMode ? "light" : "dark");
     dispatch(toggleTheme(!darkMode));
@@ -83,47 +93,49 @@ const Header = ({ title, check }: HeaderProps) => {
   };
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
-      <AppBar position="fixed" style={{ background: "#8d8d8d" }}>
-        <Toolbar variant="dense">
-          <Grid item>
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              onClick={handleClick}
-            >
-              <Home />
-            </IconButton>
-          </Grid>
-          <Grid item>
-            <Typography
-              variant="h5"
-              color="inherit"
-              component="div"
-              className="header__style"
-            >
-              {title}
-            </Typography>
-          </Grid>
-          <Grid item xs />
-          <Grid item>
-            <FavoriteList />
-          </Grid>
-          <Grid item>
-            <FormControlLabel
-              control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-              label="Change Mode"
-              onChange={changeTheme}
-              checked={check}
-            />
-          </Grid>
-          <Grid item>
-            <IconButton onClick={toMyGitHub}>
-              <Avatar src={avatar} />
-            </IconButton>
-          </Grid>
-        </Toolbar>
-      </AppBar>
+      <HideOnScroll>
+        <AppBar position="fixed" style={{ background: "#8d8d8d" }}>
+          <Toolbar variant="dense">
+            <Grid item>
+              <IconButton
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                onClick={handleClick}
+              >
+                <Home />
+              </IconButton>
+            </Grid>
+            <Grid item>
+              <Typography
+                variant="h5"
+                color="inherit"
+                component="div"
+                className="header__style"
+              >
+                {title}
+              </Typography>
+            </Grid>
+            <Grid item xs />
+            <Grid item>
+              <FavoriteList />
+            </Grid>
+            <Grid item>
+              <FormControlLabel
+                control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
+                label="Change Mode"
+                onChange={changeTheme}
+                checked={check}
+              />
+            </Grid>
+            <Grid item>
+              <IconButton onClick={toMyGitHub}>
+                <Avatar src={avatar} />
+              </IconButton>
+            </Grid>
+          </Toolbar>
+        </AppBar>
+      </HideOnScroll>
     </Grid>
   );
 };

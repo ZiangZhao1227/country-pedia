@@ -6,6 +6,7 @@ import IconButton from "@material-ui/core/IconButton";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { Link } from "react-router-dom";
 import { Grid } from "@material-ui/core";
+import Tooltip from "@mui/material/Tooltip";
 
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import {
@@ -31,9 +32,11 @@ const FavoriteList = () => {
     <Fragment>
       <Typography variant="h3" gutterBottom className="header__style">
         Favorite List
-        <IconButton onClick={() => dispatch(clearFavorite())}>
-          <DeleteForeverIcon color="error" fontSize="large" />
-        </IconButton>
+        <Tooltip title="Delete All">
+          <IconButton onClick={() => dispatch(clearFavorite())}>
+            <DeleteForeverIcon color="error" fontSize="large" />
+          </IconButton>
+        </Tooltip>
       </Typography>
       {getFavoriteList.map((country: FavoriteListCountryProps) => {
         return (

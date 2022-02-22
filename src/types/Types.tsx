@@ -79,3 +79,7 @@ export interface filteredCountriesProps {
 export interface CheckProps {
   check: boolean;
 }
+
+export interface ReactElementProps {
+  children: React.ReactElement;
+}
