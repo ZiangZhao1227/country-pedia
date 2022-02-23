@@ -64,6 +64,7 @@ export interface RowProps {
     common: string;
   };
   population: number;
+  capital: string;
   languages: {
     [key: string]: string;
   };

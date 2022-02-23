@@ -15,6 +15,9 @@ const Head = () => {
           NAME
         </TableCell>
         <TableCell className="table-head-container__header" align="center">
+          Capital&nbsp;
+        </TableCell>
+        <TableCell className="table-head-container__header" align="center">
           POPULATION&nbsp;
         </TableCell>
         <TableCell className="table-head-container__header" align="center">
