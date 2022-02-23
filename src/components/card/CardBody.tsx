@@ -11,6 +11,7 @@ import List from "../list/CardDetailList";
 import { Fragment } from "react";
 import Logo from "../../components/logo/Logo";
 import { CountryBodyProps } from "../../types/Types";
+import FavoriteIcon from "../table/FavoriteIcon";
 
 const CardBody = ({ countryDetail }: CountryBodyProps) => {
   const navigate = useNavigate();
@@ -33,6 +34,14 @@ const CardBody = ({ countryDetail }: CountryBodyProps) => {
             >
               {countryDetail.name.official}
             </Typography>
+            <Box textAlign="center">
+              <FavoriteIcon
+                countryObject={{
+                  CountryName: countryDetail.name.common,
+                  CountryFlag: countryDetail.flags.png,
+                }}
+              />
+            </Box>
             <List countryDetail={countryDetail} />
           </CardContent>
           <Box textAlign="center">
