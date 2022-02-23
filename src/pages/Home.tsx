@@ -9,6 +9,7 @@ import Form from "../components/sort/Form";
 import { CheckProps } from "../types/Types";
 import { useGetCountriesQuery } from "../redux/service/countries";
 import Loading from "../components/table/LoadingHome";
+import Footer from "../components/footer/Footer";
 
 const Home = ({ check }: CheckProps) => {
   const { data, error, isLoading } = useGetCountriesQuery();
@@ -34,6 +35,7 @@ const Home = ({ check }: CheckProps) => {
       <section className="countries-info-container">
         <CountreisTable data={data} />
       </section>
+      <Footer />
     </Fragment>
   );
 };

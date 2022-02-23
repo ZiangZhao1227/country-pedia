@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import Header from "../components/head/Header";
+import Footer from "../components/footer/Footer";
 import { CheckProps } from "../types/Types";
 
 const NotFound = ({ check }: CheckProps) => {
@@ -10,6 +11,7 @@ const NotFound = ({ check }: CheckProps) => {
       <h2 style={{ marginTop: "100px" }}>Sorry</h2>
       <p>That page cannot be found</p>
       <Link to="/">Back to the home page</Link>
+      <Footer/>
     </div>
   );
 };

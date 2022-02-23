@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import CardBody from "../components/card/CardBody";
 import Header from "../components/head/Header";
+import Footer from "../components/footer/Footer";
 import { useGetCountryByNameQuery } from "../redux/service/countries";
 import { CheckProps } from "../types/Types";
 import LoadingCard from "../components/card/LoadingCard";
@@ -22,6 +23,7 @@ const Country = ({ check }: CheckProps) => {
       <Fragment>
         <Header title="CountryDetail" check={check} />
         <CardBody countryDetail={data[0]} />
+        <Footer/>
       </Fragment>
     );
   }

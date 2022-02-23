@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Fragment } from "react";
 
 import Header from "../components/head/Header";
+import Footer from "../components/footer/Footer";
 import Logo from "../components/logo/Logo";
 import FavoriteList from "../components/list/FavoriteList";
 import "../components/card/Card.css";
@@ -34,6 +35,7 @@ const Favorite = ({ check }: CheckProps) => {
           </Box>
         </Card>
       </div>
+      <Footer />
     </Fragment>
   );
 };
