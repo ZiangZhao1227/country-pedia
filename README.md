@@ -1,83 +1,66 @@
-# Frontend React Project
+# CountryPedia React Project
 
-This is your final project for the frontend module
+CountryPedia is a front-end project that was built by myself from inception to deployment. Through CountryPedia, users are able to browse and search for details and information about all countries around the world. Also users can favorite countries and find favorite countries in the favorite list.
 
-## Instructions
+## Tech stack & Open-source libraries  
+- Typescript
+- Css
+- React Library
+- Custom hook
+- Localstorage
+- Dark Theme/Light Theme
+- [REST Countries](https://restcountries.com/) API
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [RTK Query](https://redux-toolkit.js.org/rtk-query/overview)
+- [MUI](https://mui.com/)
+- [Lodash](https://lodash.com/)
 
-### General
+## Getting Started with Create React App
 
-Fork this repo, then clone the **fork** to your machine and start working on it. You can open a pull request as soon as possible (no need to wait until finished)
-For styling, you can use whatever css solution you want: css, scss, Material UI, etc.
-You need to install the css library yourself. Make sure to use node-sass version 4.14.1 if you want to use scss (using other version may break the app, so switch to the above version in that case)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Step 1
+## Available Scripts
 
-Write the first custom hook, that:
+In the project directory, you can run:
 
-- Fetch all the countries and return the data
-- Example usage of the hook is like this:
+### `npm start`
 
-```
-// countries variable will be an array of 250 countries
-const [error, countries] = useCountries()
-```
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Write the second custom hook, that:
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- Given a country name as argument (international or native), returns the data about that country from [countries APIs](https://restcountries.com/).
-- Example usage of the hook is like this:
+### `npm test`
 
-```
-// country variable is an object, with details about Suomi (Finland)
-const [error, country] = useCountry('Suomi')
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Step 2
+### `npm run build`
 
-- Use the first custom hook you created to fetch all the countries data
-- Render this data in a table, you can use html table tag, or component library like Material UI
-- Make sure to split the table into smaller components: `TableHead.js`, `TableBody.js`, `TableRow.js`
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Step 3
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-- Integrate react router into your project and create 2 pages: `home`, and `country`
-- Homepage will contain the countries table that we created above
-- Country page will render the data about one specific country only
-- When a user click on the name of the country in the table, they will be routed to the `country` page
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Step 4
+### `npm run eject`
 
-- Set up all the redux boilerblate for the project
-- Everything related to redux stays in one folder: reducers, actions, store
-- Think about what reducer you're going to make and write them accordingly
-- Move the state that contains all countries to redux store
-- Use `combineReducers` and have a default state for the `createStore`
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### Step 5
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- Integrate redux thunk, and fetch data from the thunk instead of inside the custom hooks
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-### Step 6
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Convert the app to typescript
+## Live Demo Deployed with Netlify
 
-### Step 7
+[Live Demo](https://countrylist-project-ziang.netlify.app/)
 
-Take your time to implement the following features:
+## App Overview
 
-- Implement a search bar to search for a country
-- Convert your hook to use either thunk or saga to fetch the data
-- Switch theme of the app with Context API
-- Add/remove the countries to/from favorite list using Redux, Redux-saga, Redux-thunk
-- Sort the table based on name, region, etc.
-- Maker sure the theme and favorite list is saved in local storage to persist across refreshes of the page (you can use thunk or saga to implement side effects that get state from the store and save it to local storage)
-
-## References
-
-[Demo](https://flagify.netlify.app/)
-
-Homepage:
-![homepage](media/home.png)
-
-Country page:
-![country page](media/country.png)
+<img src="https://user-images.githubusercontent.com/56063269/154846994-06005230-d4bc-43e8-973d-89aea86354a3.png"  />
+<img src="https://user-images.githubusercontent.com/56063269/154846999-06c6d0c5-7738-447a-adda-7dac8608c0e9.png"  />
