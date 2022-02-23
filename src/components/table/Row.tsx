@@ -98,16 +98,25 @@ const Row = ({ data }: BodydataProps) => {
             </Link>
           </TableCell>
           <TableCell align="center">
+            {country.capital ? country.capital : "None Capital"}
+          </TableCell>
+          <TableCell align="center">
             {numFormatter(country.population)}
           </TableCell>
           <TableCell align="center">{country.region}</TableCell>
           <TableCell align="center">
-            {getCountryLanguages(country.languages).map((language, index) => (
-              <div key={index}>
-                <CircleIcon style={{ fontSize: "10px", marginRight: "6px" }} />
-                {language}
-              </div>
-            ))}
+            {country.languages
+              ? getCountryLanguages(country.languages).map(
+                  (language, index) => (
+                    <div key={index}>
+                      <CircleIcon
+                        style={{ fontSize: "10px", marginRight: "6px" }}
+                      />
+                      {language}
+                    </div>
+                  )
+                )
+              : "None Languages"}
           </TableCell>
           <TableCell align="center">
             <Favorite

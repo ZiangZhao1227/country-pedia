@@ -50,7 +50,7 @@ const List = ({ countryDetail }: CountryListProps) => {
           {countryDetail.borders ? (
             countryDetail.borders.join(" | ")
           ) : (
-            <p>None borders</p>
+            "None Borders"
           )}
         </AccordionDetails>
       </Accordion>
@@ -67,7 +67,7 @@ const List = ({ countryDetail }: CountryListProps) => {
             countryDetail.currencies[getfirstInput(countryDetail.currencies)]
               .name
           ) : (
-            <p>None currencies</p>
+            "None Currencies"
           )}
         </AccordionDetails>
       </Accordion>

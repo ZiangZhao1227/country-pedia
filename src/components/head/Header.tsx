@@ -118,7 +118,7 @@ const Header = ({ title, check }: HeaderProps) => {
             </Grid>
             <Grid item>
               <FormControlLabel
-                control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
+                control={<MaterialUISwitch sx={{ m: 1 }} />}
                 label="Change Mode"
                 onChange={changeTheme}
                 checked={check}
