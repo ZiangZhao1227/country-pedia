@@ -91,7 +91,7 @@ const Row = ({ data }: BodydataProps) => {
           </TableCell>
           <TableCell align="center">
             <Link
-              to={`/country/${country.name.common}`}
+              to={`/country/${country.name.official}`}
               className="country-name-link"
             >
               {country.name.common}

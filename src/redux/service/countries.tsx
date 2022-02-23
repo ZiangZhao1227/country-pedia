@@ -9,7 +9,7 @@ export const countriesApi = createApi({
       query: () => `all`,
     }),
     getCountryByName: builder.query<CountryBodyProps, string>({
-      query: (name) => `name/${name}`,
+      query: (name) => `name/${name}?fullText=true`,
     }),
   }),
 });
