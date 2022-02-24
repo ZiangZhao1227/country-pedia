@@ -4,12 +4,9 @@ import type { RootState } from "../../redux/store";
 import { CountryObjectProps } from "../../types/Types";
 
 const initialState = {
-  value:
-    typeof window !== "undefined"
-      ? localStorage.getItem("favorite")
-        ? JSON.parse(localStorage.getItem("favorite") || "[]")
-        : []
-      : [],
+  value: localStorage.getItem("favorite")
+    ? JSON.parse(localStorage.getItem("favorite") || "[]")
+    : [],
 };
 
 export const favoriteSlice = createSlice({
